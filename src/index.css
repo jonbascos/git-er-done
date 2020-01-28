@@ -5,11 +5,10 @@
 }
 
 body {
+	background-color: #3e206d;
+	color: #f0e3ff;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	height: 100vh;
-	background-color: #f3f3f3;
-	color: blue;
-	font-size: 1.5em;
 }

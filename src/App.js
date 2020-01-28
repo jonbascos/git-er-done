@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 
 import TodoInput from './components/todoInput';
+import TodoList from './components/todoList';
 
 function App() {
 	const [todoList, setTodoList] = useState([]); //Todo List
@@ -23,7 +24,7 @@ function App() {
 		const list = [...todoList];
 		list.push(item);
 		setTodoList(list);
-
+		setNewItem('');
 		setButtonIcon(true);
 	}
 
@@ -32,29 +33,23 @@ function App() {
 		const newList = list.filter((item, i) => i !== id);
 
 		setTodoList(newList);
-		setNewItem('');
 	}
-
-	const todos = todoList.map((todo, id) => (
-		<li className='todoItem' key={id}>
-			{todo.value}
-			<span className='deleteIcon' onClick={() => deleteTodo(id)}>
-				{/* Have to pass in the id of the item you want to delete */}X
-			</span>
-		</li>
-	));
 
 	return (
 		<div>
-			<h1>Welcome to my Todo List</h1>
-			<TodoInput
-				handleChange={handleChange}
-				handleClick={handleClick}
-				newItem={newItem}
-				todoList={todoList}
-				buttonDisabled={buttonIcon}
-			/>
-			<ul>{todos}</ul>
+			<div className='form-container'>
+				<h2>Git-Er-Done</h2>
+				<TodoInput
+					handleChange={handleChange}
+					handleClick={handleClick}
+					newItem={newItem}
+					todoList={todoList}
+					buttonDisabled={buttonIcon}
+				/>
+			</div>
+			<section className='list-container'>
+				<TodoList todoList={todoList} deleteTodo={deleteTodo} />
+			</section>
 		</div>
 	);
 }

@@ -7,11 +7,11 @@ function TodoInput(props) {
 				<input
 					type='text'
 					name={props.newItem}
-					placeholder='Enter New Todo Item'
+					placeholder='Enter New Item'
 					value={props.newItem.value}
 					onChange={props.handleChange}
 				/>
-
+				<br />
 				<button
 					className={
 						props.buttonDisabled ? 'buttonDisabled' : 'button'
