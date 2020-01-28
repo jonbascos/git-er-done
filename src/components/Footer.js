@@ -1,6 +1,6 @@
 import React from 'react';
 
 function Footer() {
-	return <div>Copyright &copy; Jon Bascos</div>;
+	return <footer>Copyright &copy; Jon Bascos</footer>;
 }
 export default Footer;

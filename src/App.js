@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import './App.css';
 
+import Header from './components/Header';
+import Footer from './components/Footer';
 import TodoInput from './components/todoInput';
 import TodoList from './components/todoList';
 
 function App() {
-	const [todoList, setTodoList] = useState([]); //Todo List
 	const [newItem, setNewItem] = useState('');
+	const [todoList, setTodoList] = useState([]); //Todo List
 	const [buttonIcon, setButtonIcon] = useState(true); // New Item to put into the Todo List
 
 	function handleChange(e) {
@@ -35,8 +37,10 @@ function App() {
 		setTodoList(newList);
 	}
 
+	console.log('New Item: ', newItem);
 	return (
 		<div>
+			<Header />
 			<div className='form-container'>
 				<h2>Git-Er-Done</h2>
 				<TodoInput
@@ -50,6 +54,7 @@ function App() {
 			<section className='list-container'>
 				<TodoList todoList={todoList} deleteTodo={deleteTodo} />
 			</section>
+			<Footer />
 		</div>
 	);
 }
