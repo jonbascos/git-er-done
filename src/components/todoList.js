@@ -1,11 +1,14 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 
 function TodoList(props) {
 	const todos = props.todoList.map((todo, id) => (
 		<li className='todoItem' key={id} onClick={() => props.deleteTodo(id)}>
 			{todo.value}
 			<span className='deleteIcon' onClick={() => props.deleteTodo(id)}>
-				{/* Have to pass in the id of the item you want to delete */}X
+				{/* Have to pass in the id of the item you want to delete */}
+				<FontAwesomeIcon icon={faTrashAlt} />
 			</span>
 		</li>
 	));
