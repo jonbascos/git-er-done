@@ -23,11 +23,9 @@ function App() {
 			value: newItem
 		};
 
-		const list = [...todoList];
-		list.push(item);
-		setTodoList(list);
-		setNewItem('');
+		setTodoList(prevTodoList => [...prevTodoList, item]);
 		setButtonIcon(true);
+		setNewItem('');
 	}
 
 	function deleteTodo(id) {

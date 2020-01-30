@@ -8,7 +8,7 @@ function TodoInput(props) {
 					type='text'
 					name={props.newItem}
 					placeholder='Enter New Item'
-					value={props.newItem.value}
+					value={props.newItem}
 					onChange={props.handleChange}
 				/>
 				<br />
