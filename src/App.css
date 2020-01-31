@@ -11,6 +11,10 @@
 	border-radius: 10px;
 }
 
+h1 {
+	text-align: center;
+}
+
 .list-container {
 	border: none;
 }
